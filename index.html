@@ -3,18 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
-  <body>
-    <div id="Input">
-      <textarea id="Text-input"></textarea>
-      <button id="Add-task">Add task</button>
-    </div>
-    <div id="List-tasks">
-        <h4>Tasks: </h4>
-        <div id="List">
+  <body class="montserrat">
+    <div id="Container">
+      <div id="Input">
+        <h1>To-Do List</h1>
+        <div id="GetInput">
+          <textarea
+            id="Text-input"
+            placeholder="Name of task"
+            class="montserrat"
+          ></textarea>
+          <button id="Add-task" class="montserrat">Add task</button>
         </div>
+      </div>
+      <div id="List-tasks" class="montserrat">
+        <h3>Tasks:</h3>
+        <div id="List" class="montserrat"></div>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>

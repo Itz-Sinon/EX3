@@ -1,3 +1,110 @@
+:root {
+  --base-backgroundcolor: #ffffff;
+  --base-textcolor: #222731;
+  --base-input-backgroundcolor: #eeeeee;
+  --base-btn-backgroundcolor: #38bdf8;
+  --base-btn-delete-backgroundcolor: #ff0026;
+  --base-textfont: 20px;
+}
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+#Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  height: 100vh;
+}
+#Input,
+#List-tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 95%;
+}
+#GetInput {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+}
+#Text-input {
+  padding-left: 10px;
+  line-height: 30px;
+  height: 30px;
+  width: 75%;
+  border: solid 1px gray;
+  border-right: none;
+  border-radius: 20px 0 0 20px;
+  resize: none;
+  outline: none;
+}
+#Add-task {
+  height: 35.4px;
+  width: 25%;
+  border-radius: 0 20px 20px 0;
+  border: solid 1px gray;
+  background-color: var(--base-btn-backgroundcolor);
+  color: var(--base-backgroundcolor);
+}
+.Task {
+  display: grid;
+  grid-template-columns: 10% 1fr 10%;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.Task div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.checkBox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--base-btn-backgroundcolor);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+}
+.checkBox:checked {
+  background-color: var(--base-btn-backgroundcolor);
+}
+.checkBox:checked::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 5px;
+  height: 10px;
+  border: solid var(--base-backgroundcolor);
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
 .Complete {
-    text-decoration: line-through;
+  color: rgb(0, 0, 0, 0.5);
+  text-decoration: line-through black;
+}
+.deleteBtn {
+  background-color: var(--base-btn-delete-backgroundcolor);
+  color: var(--base-backgroundcolor);
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
 }

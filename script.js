@@ -29,7 +29,9 @@ function renderTask(tasks = []) {
     todoItem.classList.add("Task");
     const setComplete = task.complete ? "Complete" : "";
     const setCheck = task.complete ? "checked" : " ";
-    todoItem.innerHTML = `<span id="text${index}" class="${setComplete}"> ${task.name} </span> <input type="checkbox" onclick="doneTask(${index})" ${setCheck}> <button onclick="deleteTask(${index})")>Delete</button>`;
+    todoItem.innerHTML = `<div> <input type="checkbox" onclick="doneTask(${index})" class="checkBox" ${setCheck}> </div>
+    <div> <span id="text${index}" class="${setComplete}"> ${task.name} </span> </div>
+    <div> <button onclick="deleteTask(${index})" class="montserrat deleteBtn">X</button> </div> `;
     listTask.appendChild(todoItem);
   });
 }
@@ -48,9 +50,12 @@ function doneTask(id) {
   renderTask(getTask());
 }
 function deleteTask(id) {
-  let tasks = getTask();
-  tasks.splice(id, 1);
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+  const choice = confirm("Are you sure want to delete ?");
+  if (choice) {
+    let tasks = getTask();
+    tasks.splice(id, 1);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 
-  renderTask(getTask());
+    renderTask(getTask());
+  }
 }
