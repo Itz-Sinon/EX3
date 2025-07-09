@@ -44,6 +44,7 @@ body {
   line-height: 30px;
   height: 30px;
   width: 75%;
+  background-color: var(--base-input-backgroundcolor);
   border: solid 1px gray;
   border-right: none;
   border-radius: 20px 0 0 20px;
